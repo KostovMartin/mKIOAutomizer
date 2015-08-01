@@ -1,0 +1,53 @@
+{
+    "manifest_version": 2,
+
+    "name": "mK IOAutomizer",
+    "short_name": "mKIOAuto",
+    "description": "ImperiaOnline automation toolkit.",
+    "version": "0.6",
+    "options_page": "options.html",
+
+    "background": {
+        "scripts": [ "background.js" ],
+        "persistent": true
+    },
+    "permissions": [
+        "storage",
+        "tabs"
+    ],
+
+    "content_scripts": [
+        {
+            "matches": [ "http://*.imperiaonline.org/*" ],
+            "js": [
+                "defaultOptions.js",
+                "lib/xajax.js",
+                "iov5/iov5Executer.js",
+                "iov5/iov5Attack.js",
+                "iov5/iov5Construction.js",
+                "iov5/iov5Espionage.js",
+                "iov5/iov5Festival.js",
+                "iov5/iov5Incognito.js",
+                "iov5/iov5Market.js",
+                "iov5/iov5Population.js"
+            ],
+            "all_frames": true,
+            "run_at": "document_start"
+        }
+    ],
+
+    "icons": {
+        "16": "images/icon16.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
+    },
+
+    "browser_action": {
+        "default_icon": {
+            "16": "images/icon16.png",
+            "48": "images/icon48.png",
+            "128": "images/icon128.png"
+          },
+        "default_title": "mK IOv5 Automizer Settings"
+    }
+}

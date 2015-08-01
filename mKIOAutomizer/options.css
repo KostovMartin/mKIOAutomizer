@@ -1,0 +1,52 @@
+body { -webkit-user-select: none; }
+
+.version {
+    left: 92%;
+    position: fixed;
+    top: 3%;
+}
+
+.icon {
+    display: block;
+    float: left;
+    height: 19px;
+    margin: 5px 0;
+    width: 29px;
+}
+
+div.col1 {
+    left: 10px;
+    position: absolute;
+}
+
+.col2 {
+    left: 300px;
+    position: absolute;
+}
+
+.col3 {
+    left: 600px;
+    position: absolute;
+}
+
+.inline-icon {
+    display: inline-block;
+    height: 19px;
+    width: 29px;
+}
+
+.left { float: left; }
+
+.left.header { padding: 6px; }
+
+.inline-icon.r_1,
+.icon.r_1 { background: url(images/gold.png); }
+
+.inline-icon.r_2,
+.icon.r_2 { background: url(images/wood.png); }
+
+.inline-icon.r_3,
+.icon.r_3 { background: url(images/iron.png); }
+
+.inline-icon.r_4,
+.icon.r_4 { background: url(images/stone.png); }

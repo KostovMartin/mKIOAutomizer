@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>mK IOAutomizer</title>
+        <link rel="stylesheet" type="text/css" href="options.css">
+    </head>
+    <body>
+        <div class="version">Version: 0.6 BETA</div>
+        <div class="col1">
+            <label><input type="checkbox" id="check-for-attack-status">Notify(sound) when under <b>ATTACK</b>.</label>
+            <br />
+            <label><input type="checkbox" id="check-for-espionage">Notify(sound) when under <b>ESPIONAGE</b>.</label>
+            <br />
+            <label><input type="checkbox" id="auto-incognito">Use <b>INCOGNITO</b>.</label>
+            <br />
+            <label><input type="checkbox" id="auto-cut-short-status">Use <b>'10 MIN CUT SHORT'</b>.</label>
+            <br />
+            <label><input type="checkbox" id="festival-gradual-effect">Start gradual effect <b>FESTIVAL</b>.</label>
+            <br />
+            <label><input type="checkbox" id="auto-hire-status">Hire <b>POPULATION</b>.</label>
+            <div id="auto-hire-population-provinces-holder"></div>    
+            <br />
+            <br />
+            <br />
+            <button id="save-button">Save</button>
+            <div id="save-button-status"></div>
+
+            <!--<br />
+            
+                <label>
+                    <b>Market History</b> keep for
+                    <select>
+                        <option value="6">6 h</option>
+                        <option value="12">12 h</option>
+                        <option value="24">24 h</option>
+                    </select>
+                </label>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Res</th>
+                            <th>Q</th>
+                            <th>Price</th>
+                            <th><span class="inline-icon r_1"></span></th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="purchases-history"></tbody>
+                </table>-->
+        </div>
+        <div class="col2">
+            <label><input type="checkbox" id="gold-status">Buy when <span class="inline-icon r_1"></span> is more than:</label>
+            <input class="numeric" data-numeric-max="9999999999" type="text" id="gold-value" size="6">
+            <br />
+            <label><input type="checkbox" id="auto-buy-wood-status">Buy <span class="inline-icon r_2"></span> when less than:</label>
+            <input class="numeric" data-numeric-max="20" type="text" id="auto-buy-wood-value" size="4">
+            <br />
+            <label><input type="checkbox" id="auto-buy-iron-status">Buy <span class="inline-icon r_3"></span> when less than:</label>
+            <input class="numeric" data-numeric-max="20" type="text" id="auto-buy-iron-value" size="4">
+            <br />
+            <label><input type="checkbox" id="auto-buy-stone-status">Buy <span class="inline-icon r_4"></span> when less than:</label>
+            <input class="numeric" data-numeric-max="20" type="text" id="auto-buy-stone-value" size="4">
+        </div>
+        <script src="defaultOptions.js"></script>
+        <script src="options.js"></script>
+    </body>
+
+</html>
