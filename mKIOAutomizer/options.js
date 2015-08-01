@@ -69,8 +69,6 @@
             byID(ironValueID).value = items.autoBuyIronValue;
             byID(stoneStatusID).checked = items.isAutoBuyStoneEnabled;
             byID(stoneValueID).value = items.autoBuyStoneValue;
-
-            //buildMarketHistory(items.marketHistory);
         });
     };
     var setAutoHireSettings = function() {
@@ -100,26 +98,6 @@
             items[j].addEventListener('drop', handleDrop, false);
             items[j].addEventListener('dragover', handleDragOver, false);
         }
-    };
-
-    var buildMarketHistory = function (history) {
-        var html = [];
-        for (var i in history) {
-
-            var item = history[i];
-            var d = new Date(item.Date);
-            //var yearString = [item.Date.getDate(), item.Date.getMonth() + 1, item.Date.getFullYear()].join(".");
-            var timeString = [d.getHours(), d.getMinutes() + 1, d.getSeconds()].join(":");
-            var date = timeString;// + " " + yearString;
-
-            html.push('<tr><td><span class="inline-icon r_' + item.ResID + '"></span></td>');
-            html.push('<td>' + item.ResQuantity + '</td>');
-            html.push('<td>' + item.ResPrice + '</td>');
-            html.push('<td>' + item.ResPrice * item.ResQuantity + '</td>');
-            html.push('<td>' + date + '</td></tr>');
-        }
-        html = html.join("");
-        document.querySelector("#" + purchasesHistoryBodyID).innerHTML = html;
     };
 
     var oldNumeric = null;
