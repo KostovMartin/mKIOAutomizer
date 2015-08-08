@@ -53,7 +53,6 @@
                     var isGoldStatusOK = !isGoldRestrictionEnabled || goldRestrictionValue <= (currentGold - gold2Pay);
                     if (isCorrect && isPriceGood && isGoldEnough && isGoldStatusOK) {
                         buyResourceRequest(resourseType, amount2Buy, Math.round(gold2Pay));
-                        //setHistory(resourseType, amount2Buy, buyPrice);
                     }
                 }
             }

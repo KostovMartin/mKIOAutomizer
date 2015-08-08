@@ -15,7 +15,5 @@
     isAutoBuyIronEnabled: false,
     autoBuyIronValue: '2.5',
     isAutoBuyStoneEnabled: false,
-    autoBuyStoneValue: '1.0',
-
-    marketHistory: [{ Date: (new Date()).getTime(), ResID: 3, ResQuantity: 1000, ResPrice: 1.23 }]
+    autoBuyStoneValue: '1.0'
 };
