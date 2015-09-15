@@ -19,8 +19,6 @@ Executer.register({
             } catch (e) {
                 xajax.request({ xjxfun: 'find_babysit' }, { parameters: [1, 1] });
             }
-
-            console.log("It is working at " + (new Date()).toString());
         }
     }
 });
