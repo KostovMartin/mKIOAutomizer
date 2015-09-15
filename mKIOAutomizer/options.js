@@ -5,6 +5,7 @@
     var festivalStatusID = "festival-gradual-effect";
     var autoHireStatusID = 'auto-hire-status';
     var autoIncognitoStatusID = 'auto-incognito';
+    var hideArmyID = 'hide-army';
 
     var goldStatusID = 'gold-status';
     var goldValueID = 'gold-value';
@@ -33,6 +34,7 @@
             isAutoHireEnabled: byID(autoHireStatusID).checked,
             isAutoIncognitoEnabled: byID(autoIncognitoStatusID).checked,
             autoHireSettings: setAutoHireSettings(),
+            hideArmy: byID(hideArmyID).checked,
 
             isGoldRestrictionEnabled: byID(goldStatusID).checked,
             goldRestrictionValue: byID(goldValueID).value,
@@ -60,6 +62,7 @@
             byID(autoHireStatusID).checked = items.isAutoHireEnabled;
             byID(autoIncognitoStatusID).checked = items.isAutoIncognitoEnabled;
             buildAutoHireSettings(items.autoHireSettings);
+            byID(hideArmyID).checked = items.hideArmy;
 
             byID(goldStatusID).checked = items.isGoldRestrictionEnabled;
             byID(goldValueID).value = items.goldRestrictionValue;

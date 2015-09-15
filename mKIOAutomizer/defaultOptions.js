@@ -7,6 +7,7 @@
     isAutoHireEnabled: false,
     isAutoIncognitoEnabled: false,
     autoHireSettings: [2, 3, 4],
+    hideArmy: false,
 
     isGoldRestrictionEnabled: true,
     goldRestrictionValue: "30000000",

@@ -38,6 +38,19 @@
         execItems.push(new ExecItem(obj));
     };
 
+    var registerExecOnce = function (obj) {
+        if (!obj.exec) {
+            throw "Missing exec";
+        }
+
+        chrome.storage.sync.get(defaultOptions, function (items) {
+            try {
+                obj.exec.call(obj.exec, items);
+            } catch (e) {
+            }
+        });
+    };
+
     var $_$ = function(d) {
         try {
             var isF = function(obj) {
@@ -70,6 +83,7 @@
 
     return {
         register: register,
+        registerExecOnce: registerExecOnce,
         $_$: $_$
     };
 }());
