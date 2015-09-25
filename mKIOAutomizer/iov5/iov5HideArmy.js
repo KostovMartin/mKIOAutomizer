@@ -1,49 +1,73 @@
-(function() {
+(function () {
 
-    var tf = function (config) {
-        var waitTime = 60000;
+    var startMoveTime = Date.now();
+    var maxMoveTimeMs = 5 * 60 * 1000;
+    var getMoveTimeMs = function () { return Date.now() - startMoveTime; };
 
-        if (config.hideArmy) {
-            Executer.$_$({
-                n: "change_current_province",
-                p: ["N666", "N1", "Svillage.php", "N1"],
-                f: function () {
-                    Executer.$_$({
-                        n: "premiumMoveAll",
-                        p: ["N1"],
-                        f: function () {
-                            Executer.$_$({
-                                n: "changeProvArrow",
-                                p: ["N1", "N1"],
-                                f: function () {
-                                    Executer.$_$({
-                                        n: "premiumMoveAll",
-                                        p: ["N1"],
-                                        f: function () {
-                                            setTimeout(function () {
-                                                Executer.$_$({
-                                                    n: "flagBackArmy",
-                                                    p: ["N2", "SmoveNow", "N1", "N9"],
-                                                    f: function () {
-                                                        setTimeout(function () {
-                                                            tf(config);
-                                                        }, 250);
-                                                    }
-                                                });
-                                            }, waitTime);
-                                        }
-                                    });
-                                }
-                            });
-                        }
-                    });
-                }
-            });
-        }
+    var startProv = 1;
+    var isMoving = false;
+
+    var moveToCurrentProv = function (cb) {
+        Executer.$_$({
+            n: "premiumMoveAll",
+            p: ["N1"],
+            f: cb
+        });
     };
 
-    Executer.registerExecOnce({
-        exec: tf
+    var changeProvince = function (provNumber, cb) {
+        Executer.$_$({
+            n: "change_current_province",
+            p: ["N666", "N1", "Svillage.php", "N" + provNumber],
+            f: cb
+        });
+    };
+
+    var nextProvince = function (cb) {
+        Executer.$_$({
+            n: "changeProvArrow",
+            p: ["N1", "N1"],
+            f: cb
+        });
+    };
+
+    var startMoving = function () {
+
+        startMoveTime = Date.now();
+        isMoving = true;
+
+        moveToCurrentProv(function () {
+
+            var doc1 = document.implementation.createHTMLDocument();
+            doc1.documentElement.innerHTML = this.responseText;
+            startProv = doc1.querySelector("#cycle-provinces .cycle-current").innerHTML * 1;
+
+            nextProvince(function () {
+                moveToCurrentProv(function () {
+                    changeProvince(startProv, function () {
+
+                        // verify if it is moving
+                        var doc2 = document.implementation.createHTMLDocument();
+                        doc2.documentElement.innerHTML = this.responseText;
+                        isMoving = doc2.getElementsByClassName("outgoing province").length !== 0;
+                    });
+                });
+            });
+        });
+    }
+
+    Executer.register({
+        getTimeout: function () { return 1000; },
+        exec: function (config) {
+            if (config.hideArmy) {
+                if (!isMoving) {
+                    startMoving();
+                }
+                else if (getMoveTimeMs() >= maxMoveTimeMs) {
+                    isMoving = false;
+                }
+            }
+        }
     });
 
 }());
