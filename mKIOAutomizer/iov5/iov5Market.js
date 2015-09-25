@@ -80,19 +80,4 @@
         xajax.request({ xjxfun: 'buyResources' }, { parameters: [123456, 1, { resId: "", resType: resourceType, amountToBuy: amount, submit: "" }, gold] });
     };
 
-    var setHistory = function(resourceType, amount, price) {
-        chrome.storage.sync.get({},
-            function (items) {
-                var newHistory = [];
-                for (var i in items.marketHostory) {
-                    var item = items.marketHostory[i];
-                    newHistory.push(item);
-                }
-                newHistory.push({ Date: (new Date()).getTime(), ResID: resourceType*1+1, ResQuantity: amount, ResPrice: price });
-                chrome.storage.sync.set({
-                    marketHistory: newHistory
-                });
-            });
-
-    };
 }());
