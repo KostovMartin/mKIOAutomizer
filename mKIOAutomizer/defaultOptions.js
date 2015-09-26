@@ -2,6 +2,7 @@
 {
     isCheckForAttackEnabled: true,
     isCheckForEspionageEnabled: true,
+    isCheckForNotLoggedInEnabled: false,
     isAutoCutShortEnabled: true,
     isFestivalEnabled: false,
     isAutoHireEnabled: false,

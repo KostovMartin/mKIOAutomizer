@@ -28,6 +28,19 @@
         }, that.Item.getTimeout()));
     };
 
+    ExecItem.prototype.execInitialTimeout = function () {
+        var initialTimeout = this.Item.getInitialTimeout ? this.Item.getInitialTimeout() : -1;
+        if (initialTimeout > 0) {
+            var that = this;
+            setTimeout(function () {
+                that.exec();
+            }, initialTimeout);
+        }
+        else {
+            this.exec();
+        }
+    };
+
     var register = function(obj) {
         if (!obj.getTimeout) {
             throw "Missing getTimeout";
@@ -62,7 +75,7 @@
 
     var start = function() {
         for (var i = 0; i < execItems.length; i++) {
-            execItems[i].exec();
+            execItems[i].execInitialTimeout();
         }
     };
 

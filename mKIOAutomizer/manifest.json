@@ -34,6 +34,17 @@
             ],
             "all_frames": true,
             "run_at": "document_start"
+        },
+        {
+            "matches": [ "http://*.imperiaonline.org/*" ],
+            "js": [
+                "defaultOptions.js",
+                "lib/xajax.js",
+                "iov5/iov5Executer.js",
+                "iov5/iov5KeepAlive.js"
+            ],
+            "all_frames": true,
+            "run_at": "document_start"
         }
     ],
 

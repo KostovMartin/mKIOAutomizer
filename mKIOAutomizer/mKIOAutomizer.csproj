@@ -51,6 +51,7 @@
     <Content Include="images\iron.png" />
     <Content Include="images\stone.png" />
     <Content Include="images\wood.png" />
+    <Content Include="iov5\iov5KeepAlive.js" />
     <Content Include="iov5\iov5HideArmy.js" />
     <Content Include="iov5\iov5Espionage.js" />
     <Content Include="iov5\iov5Attack.js" />

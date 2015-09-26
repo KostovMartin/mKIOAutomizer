@@ -1,6 +1,7 @@
 (function() {
     var attackStatusID = 'check-for-attack-status';
     var espionageStatusID = 'check-for-espionage';
+    var notLoggedInStatusID = 'check-for-not-logged-in';
     var cutShortStatusID = 'auto-cut-short-status';
     var festivalStatusID = "festival-gradual-effect";
     var autoHireStatusID = 'auto-hire-status';
@@ -29,6 +30,7 @@
         chrome.storage.sync.set({
             isCheckForAttackEnabled: byID(attackStatusID).checked,
             isCheckForEspionageEnabled: byID(espionageStatusID).checked,
+            isCheckForNotLoggedInEnabled: byID(notLoggedInStatusID).checked,
             isAutoCutShortEnabled: byID(cutShortStatusID).checked,
             isFestivalEnabled: byID(festivalStatusID).checked,
             isAutoHireEnabled: byID(autoHireStatusID).checked,
@@ -57,6 +59,7 @@
         chrome.storage.sync.get(defaultOptions, function (items) {
             byID(attackStatusID).checked = items.isCheckForAttackEnabled;
             byID(espionageStatusID).checked = items.isCheckForEspionageEnabled;
+            byID(notLoggedInStatusID).checked = items.isCheckForNotLoggedInEnabled;
             byID(cutShortStatusID).checked = items.isAutoCutShortEnabled;
             byID(festivalStatusID).checked = items.isFestivalEnabled;
             byID(autoHireStatusID).checked = items.isAutoHireEnabled;
