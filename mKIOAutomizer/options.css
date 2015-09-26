@@ -1,5 +1,9 @@
 body { -webkit-user-select: none; }
 
+h3 {
+    margin-top: 3px;
+    margin-bottom: 6px;
+}
 .version {
     left: 92%;
     position: fixed;
@@ -20,12 +24,12 @@ div.col1 {
 }
 
 .col2 {
-    left: 300px;
+    left: 270px;
     position: absolute;
 }
 
 .col3 {
-    left: 600px;
+    left: 500px;
     position: absolute;
 }
 
