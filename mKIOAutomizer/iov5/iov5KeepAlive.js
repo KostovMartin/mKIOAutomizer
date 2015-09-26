@@ -3,7 +3,6 @@ Executer.register({
     getInitialTimeout: function () { return 10 * 1000; },
     exec: function (config) {
         if (config.isCheckForNotLoggedInEnabled) {
-            debugger
             Executer.$_$({
                 n: "allBuildingsCutShort",
                 f: function () {
