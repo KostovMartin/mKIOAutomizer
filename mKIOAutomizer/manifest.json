@@ -23,6 +23,7 @@
                 "defaultOptions.js",
                 "lib/xajax.js",
                 "iov5/iov5Executer.js",
+                "iov5/iov5Alliance_Attack.js",
                 "iov5/iov5Attack.js",
                 "iov5/iov5Construction.js",
                 "iov5/iov5Espionage.js",

@@ -1,4 +1,7 @@
 (function() {
+
+    var alliance_AttackStatusID = 'check-for-alliance-attack-status';
+
     var attackStatusID = 'check-for-attack-status';
     var espionageStatusID = 'check-for-espionage';
     var notLoggedInStatusID = 'check-for-not-logged-in';
@@ -28,6 +31,8 @@
 
     var saveOptions = function() {
         chrome.storage.sync.set({
+            isCheckForAlliance_AttackEnabled: byID(alliance_AttackStatusID).checked,
+
             isCheckForAttackEnabled: byID(attackStatusID).checked,
             isCheckForEspionageEnabled: byID(espionageStatusID).checked,
             isCheckForNotLoggedInEnabled: byID(notLoggedInStatusID).checked,
@@ -57,6 +62,8 @@
 
     var restoreOptions = function() {
         chrome.storage.sync.get(defaultOptions, function (items) {
+            byID(alliance_AttackStatusID).checked = items.isCheckForAlliance_AttackEnabled;
+
             byID(attackStatusID).checked = items.isCheckForAttackEnabled;
             byID(espionageStatusID).checked = items.isCheckForEspionageEnabled;
             byID(notLoggedInStatusID).checked = items.isCheckForNotLoggedInEnabled;

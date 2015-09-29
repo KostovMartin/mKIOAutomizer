@@ -1,17 +1,19 @@
 ﻿var defaultOptions =
 {
+    isCheckForAlliance_AttackEnabled: false,
+
     isCheckForAttackEnabled: true,
     isCheckForEspionageEnabled: true,
     isCheckForNotLoggedInEnabled: false,
     isAutoCutShortEnabled: true,
     isFestivalEnabled: false,
-    isAutoHireEnabled: false,
+    isAutoHireEnabled: true,
     isAutoIncognitoEnabled: false,
     autoHireSettings: [2, 3, 4],
     hideArmy: false,
 
-    isGoldRestrictionEnabled: true,
-    goldRestrictionValue: "30000000",
+    isGoldRestrictionEnabled: false,
+    goldRestrictionValue: "0",
     isAutoBuyWoodEnabled: false,
     autoBuyWoodValue: '0.5',
     isAutoBuyIronEnabled: false,
