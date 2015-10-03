@@ -1,16 +1,17 @@
 ﻿var defaultOptions =
 {
-    isCheckForAlliance_AttackEnabled: false,
-
     isCheckForAttackEnabled: true,
     isCheckForEspionageEnabled: true,
     isCheckForNotLoggedInEnabled: false,
+    hideArmy: false,
+    isAutoIncognitoEnabled: false,
+
+    isCheckForAlliance_AttackEnabled: false,
+
     isAutoCutShortEnabled: true,
     isFestivalEnabled: false,
     isAutoHireEnabled: true,
-    isAutoIncognitoEnabled: false,
     autoHireSettings: [2, 3, 4],
-    hideArmy: false,
 
     isGoldRestrictionEnabled: false,
     goldRestrictionValue: "0",

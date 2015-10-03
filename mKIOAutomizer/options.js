@@ -1,15 +1,16 @@
 (function() {
 
-    var alliance_AttackStatusID = 'check-for-alliance-attack-status';
-
     var attackStatusID = 'check-for-attack-status';
     var espionageStatusID = 'check-for-espionage';
     var notLoggedInStatusID = 'check-for-not-logged-in';
+    var hideArmyID = 'hide-army';
+    var autoIncognitoStatusID = 'auto-incognito';
+
+    var alliance_AttackStatusID = 'check-for-alliance-attack-status';
+
     var cutShortStatusID = 'auto-cut-short-status';
     var festivalStatusID = "festival-gradual-effect";
     var autoHireStatusID = 'auto-hire-status';
-    var autoIncognitoStatusID = 'auto-incognito';
-    var hideArmyID = 'hide-army';
 
     var goldStatusID = 'gold-status';
     var goldValueID = 'gold-value';
@@ -20,8 +21,6 @@
     var stoneStatusID = 'auto-buy-stone-status';
     var stoneValueID = 'auto-buy-stone-value';
 
-    var purchasesHistoryBodyID = 'purchases-history';
-
     var saveButtonID = 'save-button';
     var saveStatusHolderID = 'save-button-status';
 
@@ -31,17 +30,18 @@
 
     var saveOptions = function() {
         chrome.storage.sync.set({
-            isCheckForAlliance_AttackEnabled: byID(alliance_AttackStatusID).checked,
-
             isCheckForAttackEnabled: byID(attackStatusID).checked,
             isCheckForEspionageEnabled: byID(espionageStatusID).checked,
             isCheckForNotLoggedInEnabled: byID(notLoggedInStatusID).checked,
+            hideArmy: byID(hideArmyID).checked,
+            isAutoIncognitoEnabled: byID(autoIncognitoStatusID).checked,
+
+            isCheckForAlliance_AttackEnabled: byID(alliance_AttackStatusID).checked,
+
             isAutoCutShortEnabled: byID(cutShortStatusID).checked,
             isFestivalEnabled: byID(festivalStatusID).checked,
             isAutoHireEnabled: byID(autoHireStatusID).checked,
-            isAutoIncognitoEnabled: byID(autoIncognitoStatusID).checked,
             autoHireSettings: setAutoHireSettings(),
-            hideArmy: byID(hideArmyID).checked,
 
             isGoldRestrictionEnabled: byID(goldStatusID).checked,
             goldRestrictionValue: byID(goldValueID).value,
