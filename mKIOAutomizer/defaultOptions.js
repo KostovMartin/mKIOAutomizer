@@ -10,6 +10,7 @@
 
     isAutoCutShortEnabled: true,
     isFestivalEnabled: false,
+    isHideResourcesEnabled: false,
     isAutoHireEnabled: true,
     autoHireSettings: [2, 3, 4],
 

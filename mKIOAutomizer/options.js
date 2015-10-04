@@ -10,6 +10,7 @@
 
     var cutShortStatusID = 'auto-cut-short-status';
     var festivalStatusID = "festival-gradual-effect";
+    var hideResourcesStatusID = "hide-resources-status";
     var autoHireStatusID = 'auto-hire-status';
 
     var goldStatusID = 'gold-status';
@@ -40,6 +41,7 @@
 
             isAutoCutShortEnabled: byID(cutShortStatusID).checked,
             isFestivalEnabled: byID(festivalStatusID).checked,
+            isHideResourcesEnabled: byID(hideResourcesStatusID).checked,
             isAutoHireEnabled: byID(autoHireStatusID).checked,
             autoHireSettings: setAutoHireSettings(),
 
@@ -67,8 +69,10 @@
             byID(attackStatusID).checked = items.isCheckForAttackEnabled;
             byID(espionageStatusID).checked = items.isCheckForEspionageEnabled;
             byID(notLoggedInStatusID).checked = items.isCheckForNotLoggedInEnabled;
+
             byID(cutShortStatusID).checked = items.isAutoCutShortEnabled;
             byID(festivalStatusID).checked = items.isFestivalEnabled;
+            byID(hideResourcesStatusID).checked = items.isHideResourcesEnabled;
             byID(autoHireStatusID).checked = items.isAutoHireEnabled;
             byID(autoIncognitoStatusID).checked = items.isAutoIncognitoEnabled;
             buildAutoHireSettings(items.autoHireSettings);
