@@ -64,19 +64,19 @@
 
     var restoreOptions = function() {
         chrome.storage.sync.get(defaultOptions, function (items) {
-            byID(alliance_AttackStatusID).checked = items.isCheckForAlliance_AttackEnabled;
-
             byID(attackStatusID).checked = items.isCheckForAttackEnabled;
             byID(espionageStatusID).checked = items.isCheckForEspionageEnabled;
             byID(notLoggedInStatusID).checked = items.isCheckForNotLoggedInEnabled;
+            byID(hideArmyID).checked = items.hideArmy;
+            byID(autoIncognitoStatusID).checked = items.isAutoIncognitoEnabled;
+
+            byID(alliance_AttackStatusID).checked = items.isCheckForAlliance_AttackEnabled;
 
             byID(cutShortStatusID).checked = items.isAutoCutShortEnabled;
             byID(festivalStatusID).checked = items.isFestivalEnabled;
             byID(hideResourcesStatusID).checked = items.isHideResourcesEnabled;
             byID(autoHireStatusID).checked = items.isAutoHireEnabled;
-            byID(autoIncognitoStatusID).checked = items.isAutoIncognitoEnabled;
             buildAutoHireSettings(items.autoHireSettings);
-            byID(hideArmyID).checked = items.hideArmy;
 
             byID(goldStatusID).checked = items.isGoldRestrictionEnabled;
             byID(goldValueID).value = items.goldRestrictionValue;
