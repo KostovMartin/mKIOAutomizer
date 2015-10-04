@@ -9,7 +9,7 @@
     var isMovingBackInProgress = false;
 
     var moveToCurrentProv = function (cb) {
-        Executer.$_$({
+        Executer.post({
             n: "transport_all",
             p: ["N1"],
             f: cb
@@ -17,7 +17,7 @@
     };
 
     var changeProvince = function (provNumber, cb) {
-        Executer.$_$({
+        Executer.post({
             n: "change_current_province",
             p: ["N666", "N1", "Svillage.php", "N" + provNumber],
             f: cb
@@ -25,7 +25,7 @@
     };
 
     var nextProvince = function (cb) {
-        Executer.$_$({
+        Executer.post({
             n: "changeProvArrow",
             p: ["N1", "N1"],
             f: cb
@@ -51,7 +51,7 @@
     };
 
     var moveBackSingle = function (id, cb) {
-        Executer.$_$({
+        Executer.post({
             n: "transport_back",
             p: ["N1", "N" + id],
             f: cb
@@ -71,7 +71,7 @@
     };
 
     var moveBack = function (cb) {
-        Executer.$_$({
+        Executer.post({
             n: "transport_screen",
             p: ["N1", "S", "N2"],
             f: function () {
@@ -90,7 +90,7 @@
     };
 
     var moveNow = function (cb) {
-        Executer.$_$({
+        Executer.post({
             n: "transport_now",
             p: ["N1", "N2132132"],
             f: cb

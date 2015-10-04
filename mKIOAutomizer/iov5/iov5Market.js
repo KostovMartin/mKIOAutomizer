@@ -33,7 +33,7 @@
 
     var pricesRequest = function(resourseType, buyPrice,
         isGoldRestrictionEnabled, goldRestrictionValue) {
-        Executer.$_$({
+        Executer.post({
             n: "tradeTabs",
             p: ["N1", "N2", "N" + resourseType],
             f: function() {

@@ -51,7 +51,7 @@
         execItems.push(new ExecItem(obj));
     };
 
-    var $_$ = function(d) {
+    var post = function (d) {
         try {
             var isF = function(obj) {
                 return !!(obj && obj.constructor && obj.call && obj.apply);
@@ -83,6 +83,6 @@
 
     return {
         register: register,
-        $_$: $_$
+        post: post
     };
 }());

@@ -8,7 +8,7 @@
     var isMoving = false;
 
     var moveToCurrentProv = function (cb) {
-        Executer.$_$({
+        Executer.post({
             n: "premiumMoveAll",
             p: ["N1"],
             f: cb
@@ -16,7 +16,7 @@
     };
 
     var changeProvince = function (provNumber, cb) {
-        Executer.$_$({
+        Executer.post({
             n: "change_current_province",
             p: ["N666", "N1", "Svillage.php", "N" + provNumber],
             f: cb
@@ -24,7 +24,7 @@
     };
 
     var nextProvince = function (cb) {
-        Executer.$_$({
+        Executer.post({
             n: "changeProvArrow",
             p: ["N1", "N1"],
             f: cb

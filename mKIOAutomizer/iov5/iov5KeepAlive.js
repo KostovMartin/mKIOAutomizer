@@ -3,7 +3,7 @@ Executer.register({
     getInitialTimeout: function () { return 10 * 1000; },
     exec: function (config) {
         if (config.isCheckForNotLoggedInEnabled) {
-            Executer.$_$({
+            Executer.post({
                 n: "allBuildingsCutShort",
                 f: function () {
                     var doc = document.implementation.createHTMLDocument();

@@ -2,7 +2,7 @@ Executer.register({
     getTimeout: function() { return 15 * 1000; },
     exec: function (config) {
         if (config.isCheckForEspionageEnabled) {
-            Executer.$_$({
+            Executer.post({
                 n: "spiesSubTabs",
                 p: ["N999", "N2"],
                 f: function () {
