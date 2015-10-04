@@ -1,7 +1,7 @@
 (function () {
 
     var startMoveTime = Date.now();
-    var maxMoveTimeMs = 1 * 60 * 1000;
+    var maxMoveTimeMs = 5 * 60 * 1000;
     var getMoveTimeMs = function () { return Date.now() - startMoveTime; };
 
     var startProv = 1;
