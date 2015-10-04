@@ -4,7 +4,7 @@
     "name": "mK IOAutomizer",
     "short_name": "mKIOAuto",
     "description": "ImperiaOnline automation toolkit.",
-    "version": "0.9",
+    "version": "0.9.1",
     "options_page": "options.html",
 
     "background": {
