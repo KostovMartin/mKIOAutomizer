@@ -1,12 +1,13 @@
 (function() {
 
     var attackStatusID = 'check-for-attack-status';
+    var attackUnitsCountID = 'check-for-attack-units-count';
     var espionageStatusID = 'check-for-espionage';
     var notLoggedInStatusID = 'check-for-not-logged-in';
     var hideArmyID = 'hide-army';
     var autoIncognitoStatusID = 'auto-incognito';
 
-    var alliance_AttackStatusID = 'check-for-alliance-attack-status';
+    //var alliance_AttackStatusID = 'check-for-alliance-attack-status';
 
     var cutShortStatusID = 'auto-cut-short-status';
     var festivalStatusID = "festival-gradual-effect";
@@ -32,12 +33,13 @@
     var saveOptions = function() {
         chrome.storage.sync.set({
             isCheckForAttackEnabled: byID(attackStatusID).checked,
+            attackUnitsCount: byID(attackUnitsCountID).value,
             isCheckForEspionageEnabled: byID(espionageStatusID).checked,
             isCheckForNotLoggedInEnabled: byID(notLoggedInStatusID).checked,
             hideArmy: byID(hideArmyID).checked,
             isAutoIncognitoEnabled: byID(autoIncognitoStatusID).checked,
 
-            isCheckForAlliance_AttackEnabled: byID(alliance_AttackStatusID).checked,
+            //isCheckForAlliance_AttackEnabled: byID(alliance_AttackStatusID).checked,
 
             isAutoCutShortEnabled: byID(cutShortStatusID).checked,
             isFestivalEnabled: byID(festivalStatusID).checked,
@@ -65,12 +67,13 @@
     var restoreOptions = function() {
         chrome.storage.sync.get(defaultOptions, function (items) {
             byID(attackStatusID).checked = items.isCheckForAttackEnabled;
+            byID(attackUnitsCountID).value = items.attackUnitsCount;
             byID(espionageStatusID).checked = items.isCheckForEspionageEnabled;
             byID(notLoggedInStatusID).checked = items.isCheckForNotLoggedInEnabled;
             byID(hideArmyID).checked = items.hideArmy;
             byID(autoIncognitoStatusID).checked = items.isAutoIncognitoEnabled;
 
-            byID(alliance_AttackStatusID).checked = items.isCheckForAlliance_AttackEnabled;
+            //byID(alliance_AttackStatusID).checked = items.isCheckForAlliance_AttackEnabled;
 
             byID(cutShortStatusID).checked = items.isAutoCutShortEnabled;
             byID(festivalStatusID).checked = items.isFestivalEnabled;

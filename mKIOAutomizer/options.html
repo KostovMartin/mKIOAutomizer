@@ -5,12 +5,13 @@
         <link rel="stylesheet" type="text/css" href="options.css">
     </head>
     <body>
-        <div class="version">Version: 0.8 BETA</div>
+        <div class="version">Version: 0.9 BETA</div>
 
         <div class="col1">
             <h3>War</h3>
 
-            <label><input type="checkbox" id="check-for-attack-status">Notify(sound) when under <b>ATTACK</b></label>
+            <label><input type="checkbox" id="check-for-attack-status">Notify(sound) when under <b>ATTACK</b>, when more than </label>
+            <input class="numeric" data-numeric-max="3000000" type="text" id="check-for-attack-units-count" size="3">
             <br />
             <label><input type="checkbox" id="check-for-espionage">Notify(sound) when under <b>ESPIONAGE</b></label>
             <br />
@@ -22,11 +23,11 @@
             <br />
             <br />
 
-            <h3>Alliance War</h3>
+            <!--<h3>Alliance War</h3>
 
             <label><input type="checkbox" id="check-for-alliance-attack-status">Notify(sound) when under <b>ATTACK</b></label>
             <br />
-            <br />
+            <br />-->
             <button id="save-button">Save</button>
             <div id="save-button-status"></div>
         </div>
@@ -49,13 +50,13 @@
             <input class="numeric" data-numeric-max="9999999999" type="text" id="gold-value" size="6">
             <br />
             <label><input type="checkbox" id="auto-buy-wood-status">Buy <span class="inline-icon r_2"></span> when less than </label>
-            <input class="numeric" data-numeric-max="20" type="text" id="auto-buy-wood-value" size="4">
+            <input class="numeric" data-numeric-max="20" type="text" id="auto-buy-wood-value" size="1">
             <br />
             <label><input type="checkbox" id="auto-buy-iron-status">Buy <span class="inline-icon r_3"></span> when less than </label>
-            <input class="numeric" data-numeric-max="20" type="text" id="auto-buy-iron-value" size="4">
+            <input class="numeric" data-numeric-max="20" type="text" id="auto-buy-iron-value" size="1">
             <br />
             <label><input type="checkbox" id="auto-buy-stone-status">Buy <span class="inline-icon r_4"></span> when less than </label>
-            <input class="numeric" data-numeric-max="20" type="text" id="auto-buy-stone-value" size="4">
+            <input class="numeric" data-numeric-max="20" type="text" id="auto-buy-stone-value" size="1">
         </div>
         <script src="defaultOptions.js"></script>
         <script src="options.js"></script>

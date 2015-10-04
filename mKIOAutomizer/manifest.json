@@ -4,7 +4,7 @@
     "name": "mK IOAutomizer",
     "short_name": "mKIOAuto",
     "description": "ImperiaOnline automation toolkit.",
-    "version": "0.8",
+    "version": "0.9",
     "options_page": "options.html",
 
     "background": {
@@ -21,7 +21,6 @@
             "matches": [ "http://*.imperiaonline.org/imperia/game_v5/*" ],
             "js": [
                 "defaultOptions.js",
-                "lib/xajax.js",
                 "iov5/iov5Executer.js",
                 "iov5/iov5Alliance_Attack.js",
                 "iov5/iov5Attack.js",
@@ -41,7 +40,6 @@
             "matches": [ "http://*.imperiaonline.org/*" ],
             "js": [
                 "defaultOptions.js",
-                "lib/xajax.js",
                 "iov5/iov5Executer.js",
                 "iov5/iov5KeepAlive.js"
             ],

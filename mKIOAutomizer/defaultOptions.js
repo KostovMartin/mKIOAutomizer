@@ -1,6 +1,7 @@
 ﻿var defaultOptions =
 {
     isCheckForAttackEnabled: true,
+    attackUnitsCount: "",
     isCheckForEspionageEnabled: true,
     isCheckForNotLoggedInEnabled: false,
     hideArmy: false,
