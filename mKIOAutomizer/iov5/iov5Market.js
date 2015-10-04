@@ -77,7 +77,11 @@
     };
 
     var buyResourceRequest = function(resourceType, amount, gold) {
-        xajax.request({ xjxfun: 'buyResources' }, { parameters: [123456, 1, { resId: "", resType: resourceType, amountToBuy: amount, submit: "" }, gold] });
+        var xml = "<xjxobj><e><k>resId</k><v>S</v></e><e><k>resType</k><v>S" + resourceType + "</v></e><e><k>amountToBuy</k><v>N" + amount + "</v></e><e><k>submit</k><v>S</v></e></xjxobj>"
+        Executer.post({
+            n: "buyResources",
+            p: ["N123456", "N1", xml, "N" + gold]
+        });
     };
 
 }());
